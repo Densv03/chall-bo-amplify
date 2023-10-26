@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-challboamplify-dev-130150-authRole",
+      "UnauthRoleArn": "arn:aws:iam::307453858370:role/amplify-challboamplify-dev-130150-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::307453858370:role/amplify-challboamplify-dev-130150-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-challboamplify-dev-130150-deployment",
+      "UnauthRoleName": "amplify-challboamplify-dev-130150-unauthRole",
+      "StackName": "amplify-challboamplify-dev-130150",
+      "StackId": "arn:aws:cloudformation:eu-north-1:307453858370:stack/amplify-challboamplify-dev-130150/af82c7c0-73e6-11ee-aba6-0e08df08bfa6",
+      "AmplifyAppId": "d87e59pqou6mw"
+    },
+    "categories": {
+      "auth": {
+        "challboamplify80424393": {},
+        "challboamplify": {}
+      }
+    }
+  }
+}

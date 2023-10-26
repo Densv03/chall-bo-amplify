@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import { Amplify } from "aws-amplify";
+import awsmobile from "./aws-exports";
+import { AppRouter } from "./router/AppRouter";
+import { BrowserRouter } from "react-router-dom";
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+Amplify.configure(awsmobile);
+
+function App({signOut, user}: any) {
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <AppRouter />
+            </BrowserRouter>
+        </div>
+    )
+  // return (
+  //     <div>
+  //       <Heading level={1}>Hello {user.username}</Heading>
+  //       <Button onClick={signOut}>Sign out</Button>
+  //       <h2>Amplify Todos</h2>
+  //     </div>
+  // );
 }
 
-export default App;
+export default withAuthenticator(App);

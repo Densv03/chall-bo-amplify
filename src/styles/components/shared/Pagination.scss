@@ -1,0 +1,13 @@
+@import 'src/styles/colors/light-theme';
+
+.pagination {
+  .pagination-item {
+    padding: 5px;
+    border: 1px solid $primary-border-color;
+    background-color: $primary-color;
+
+    &--active {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

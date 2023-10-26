@@ -1,0 +1,11 @@
+@function darken-color($color, $amount) {
+  @return darken($color, $amount);
+}
+
+@mixin darken-background($color, $amount) {
+  background: darken-color($color, $amount);
+}
+
+@mixin darken-text($color, $amount) {
+  color: darken-color($color, $amount);
+}

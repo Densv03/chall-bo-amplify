@@ -1,0 +1,16 @@
+@import 'src/styles/colors/light-theme';
+
+.btn {
+  padding: 5px 20px;
+  outline: none;
+  border: 1px solid #000;
+  color: #000;
+
+  &--light-gray {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}

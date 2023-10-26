@@ -1,0 +1,20 @@
+.sort-by-wrapper {
+  padding: 50px 0 40px 0;
+}
+
+.sort-by {
+  display: flex;
+  cursor: pointer;
+
+  &__label {
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  &__filter {
+    margin-right: 4px;
+  }
+
+  &__direction {
+  }
+}
