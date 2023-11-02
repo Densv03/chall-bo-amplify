@@ -3,7 +3,6 @@ import { ChallInput } from '../UI/ChallInput';
 import { ChallInputThemeEnum } from '../../enums/UI/chall-input-theme.enum';
 import { SortBy } from '../shared/SortBy';
 import Pagination from '../shared/Pagination';
-import { useCustomState } from '../../hooks/useCustomState.hook';
 import debounce from 'lodash/debounce';
 import { ChallButton } from "../UI/ChallButton";
 import { ChallButtonThemeEnum } from "../../enums/UI/chall-button-theme.enum";
@@ -11,15 +10,18 @@ import { Auth } from "aws-amplify";
 import { UserListParams } from "../../store/types/userList";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
+import { UserListItem } from "./UserListItem";
+import { User } from "../../models/core/user.model";
+import { useNavigate } from "react-router-dom";
 
 export const UserList = () => {
     const {data, loading, error, params} = useTypedSelector((state) => state.userList);
+    const navigate = useNavigate();
 
     const {fetchUsers, setUserListOptions} = useActions();
 
     useEffect(() => {
         fetchUsers(params as unknown as UserListParams);
-        console.log('params', params)
     }, [params]);
 
     const updateUserListState = <K extends keyof UserListParams>
@@ -57,6 +59,10 @@ export const UserList = () => {
         }
     }
 
+    const redirectToUserDetails = (user: User): void => {
+        navigate(`/users/${user.id}`);
+    }
+
     return (
         <div className="user-list-wrapper">
             {isLoading()}
@@ -71,14 +77,7 @@ export const UserList = () => {
                 <SortBy onSortChange={changeSortBy} initialDirection={'asc'}/>
             </div>
             <div className="user-list">
-                {data.map(user => {
-                    return (
-                        <div key={user.id} className="user-list-item d-flex justify-content-around">
-                            <div className="user-list-item__name">{user.name}</div>
-                            <div className="user-list-item__email">{user.email}</div>
-                        </div>
-                    );
-                })}
+                {data.map(user => (<UserListItem user={user} key={user.id} onClick={() => redirectToUserDetails(user)} />))}
             </div>
             <div className="user-list-pagination">
                 <Pagination items={items} itemsPerPage={2} togglePage={togglePage}/>

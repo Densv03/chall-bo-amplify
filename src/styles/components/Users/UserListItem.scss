@@ -1,0 +1,13 @@
+@import 'src/styles/colors/light-theme';
+
+.user-list-item {
+  height: 97px;
+  display: flex;
+  align-items: center;
+  background: $light-gray;
+  border: 1px solid $primary-border-color;
+  border-radius: 20px;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}

@@ -10,8 +10,6 @@
 // Colors
 @import './colors/light-theme';
 
-// Components
-
 // Login
 @import './components/Login/Login.module';
 @import './components/Login/LoginForm.module';
@@ -21,6 +19,7 @@
 
 // Users
 @import './components/Users/UserList';
+@import './components/Users/UserListItem';
 
 // Core
 @import './components/Sidenav';
