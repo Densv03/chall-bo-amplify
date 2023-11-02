@@ -7,6 +7,6 @@ interface UserListItemProps {
 
 export const UserListItem: React.FC<UserListItemProps> = ({user, onClick}) => {
     return (<div className="user-list-item" onClick={onClick}>
-        {user.name}
+        {user?.name}
     </div>)
 };
