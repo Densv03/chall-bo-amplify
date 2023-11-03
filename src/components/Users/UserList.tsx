@@ -24,6 +24,16 @@ export const UserList = () => {
         fetchUsers(params as unknown as UserListParams);
     }, [params]);
 
+    useEffect(() => {
+        return () => {
+            setUserListOptions({
+                q: '',
+                page: 1,
+                sortBy: 'asc'
+            });
+        };
+    }, []);
+
     const updateUserListState = <K extends keyof UserListParams>
     (key: K, value: UserListParams[K]) => {
         setUserListOptions({...params, [key]: value});
