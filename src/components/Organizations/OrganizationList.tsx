@@ -21,29 +21,6 @@ export const OrganizationList = () => {
       page: 1,
       sortBy: 'asc',
     });
-  const items = [
-    'one',
-    'two',
-    'three',
-    'four',
-    'five',
-    'six',
-    'seven',
-    'eight',
-    'nine',
-    'ten',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
-  ];
-
   useEffect(() => {
     console.log('fetch', organizationsListingState);
   }, [organizationsListingState]);
@@ -79,7 +56,7 @@ export const OrganizationList = () => {
           updateOrganizationsListingState('sortBy', direction)
         }
       />
-      <Pagination items={items} itemsPerPage={2} togglePage={togglePage} />
+      <Pagination length={10} itemsPerPage={2} togglePage={togglePage} />
     </div>
   );
 };

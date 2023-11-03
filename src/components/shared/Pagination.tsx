@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import usePagination from '../../hooks/usePagination.hook';
 
 interface PaginationProps {
-  items: any[];
+  length: number;
   itemsPerPage: number;
   togglePage: (page: number) => void;
 }
 export const Pagination: React.FC<PaginationProps> = ({
-  items,
+  length,
   itemsPerPage,
   togglePage,
 }) => {
   const { currentPage, totalPages, prevPage, nextPage, goToPage, pageNumbers } =
-    usePagination(items, itemsPerPage);
+    usePagination(length, itemsPerPage);
 
   useEffect(() => {
     togglePage(currentPage);

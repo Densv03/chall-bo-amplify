@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { UsePagination } from '../models/hooks/use-pagination.model';
 
-function usePagination(items: any[], itemsPerPage: number): UsePagination {
+function usePagination(length: number, itemsPerPage: number): UsePagination {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const totalPages = Math.ceil(length / itemsPerPage);
 
   const nextPage = () => {
     if (currentPage < totalPages) {

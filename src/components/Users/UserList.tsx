@@ -41,8 +41,6 @@ export const UserList = () => {
         updateUserListState('q', value);
     }, 300);
 
-    const items = new Array(20).fill(0).map((_, i) => i + 1);
-
     const logout = () => {
         Auth.signOut();
     }
@@ -80,7 +78,7 @@ export const UserList = () => {
                 {data.map(user => (<UserListItem user={user} key={user.id} onClick={() => redirectToUserDetails(user)} />))}
             </div>
             <div className="user-list-pagination">
-                <Pagination items={items} itemsPerPage={2} togglePage={togglePage}/>
+                <Pagination length={10} itemsPerPage={2} togglePage={togglePage}/>
             </div>
             <ChallButton buttonTheme={ChallButtonThemeEnum.LIGHT_GRAY} onClick={logout}>Logout</ChallButton>
         </div>
