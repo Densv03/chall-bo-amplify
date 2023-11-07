@@ -18,6 +18,8 @@ export const currentUserReducer = (state = initialState, action: CurrentUserActi
             return {...state, user: action.payload};
         case CurrentUserActionTypes.SET_CURRENT_ID:
             return {...state, id: action.payload};
+        case CurrentUserActionTypes.RESET_CURRENT_USER:
+            return {...state, ...initialState};
         default:
             return state;
     }

@@ -13,3 +13,9 @@ export const fetchCurrentUser = (id: string) => {
         }
     }
 }
+
+export const resetCurrentUser = () => {
+    return (dispatch: Dispatch<CurrentUserAction>) => {
+        dispatch({type: CurrentUserActionTypes.RESET_CURRENT_USER});
+    }
+}

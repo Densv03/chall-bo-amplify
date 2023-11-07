@@ -13,6 +13,7 @@ export enum CurrentUserActionTypes {
     FETCH_CURRENT_USER_ERROR = 'FETCH_CURRENT_USER_ERROR',
     SET_CURRENT_USER = 'SET_CURRENT_USER',
     SET_CURRENT_ID = 'SET_CURRENT_ID',
+    RESET_CURRENT_USER = 'RESET_CURRENT_USER'
 }
 
 interface FetchCurrentUserAction {
@@ -39,4 +40,8 @@ interface SetCurrentIdAction {
     payload: string;
 }
 
-export type CurrentUserAction = FetchCurrentUserAction | FetchCurrentUserSuccessAction | FetchCurrentUserErrorAction | SetCurrentUserAction | SetCurrentIdAction;
+interface ResetCurrentUserAction {
+    type: CurrentUserActionTypes.RESET_CURRENT_USER;
+}
+
+export type CurrentUserAction = FetchCurrentUserAction | FetchCurrentUserSuccessAction | FetchCurrentUserErrorAction | SetCurrentUserAction | SetCurrentIdAction | ResetCurrentUserAction;

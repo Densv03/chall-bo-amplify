@@ -8,7 +8,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 export const UserDetails = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-    const {fetchCurrentUser} = useActions();
+    const {fetchCurrentUser, resetCurrentUser} = useActions();
     const {user, loading, error} = useTypedSelector((state) => state.currentUser);
     const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ export const UserDetails = () => {
     }, []);
 
     const redirectBack = () => {
-        dispatch({type: CurrentUserActionTypes.SET_CURRENT_ID, payload: null});
+        resetCurrentUser();
         navigate('/users');
     }
     return <div className="user-details">
