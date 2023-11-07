@@ -18,7 +18,7 @@ export const UserList = () => {
     const {data, loading, error, params} = useTypedSelector((state) => state.userList);
     const navigate = useNavigate();
 
-    const {fetchUsers, setUserListOptions} = useActions();
+    const {fetchUsers, setUserListOptions, resetUserListOptions} = useActions();
 
     useEffect(() => {
         fetchUsers(params as unknown as UserListParams);
@@ -26,11 +26,7 @@ export const UserList = () => {
 
     useEffect(() => {
         return () => {
-            setUserListOptions({
-                q: '',
-                page: 1,
-                sortBy: 'asc'
-            });
+            resetUserListOptions();
         };
     }, []);
 
@@ -85,7 +81,8 @@ export const UserList = () => {
                 <SortBy onSortChange={changeSortBy} initialDirection={'asc'}/>
             </div>
             <div className="user-list">
-                {data.map(user => (<UserListItem user={user} key={user.id} onClick={() => redirectToUserDetails(user)} />))}
+                {data.map(user => (
+                    <UserListItem user={user} key={user.id} onClick={() => redirectToUserDetails(user)}/>))}
             </div>
             <div className="user-list-pagination">
                 <Pagination length={10} itemsPerPage={2} togglePage={togglePage}/>

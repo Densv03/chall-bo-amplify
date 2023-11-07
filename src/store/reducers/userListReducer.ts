@@ -21,6 +21,8 @@ export const userListReducer = (state = initialState, action: UserListAction) =>
             return {...state, loading: false, error: action.payload};
         case UserListActionTypes.SET_USER_LIST_OPTIONS:
             return {...state, params: action.payload};
+        case UserListActionTypes.RESET_USER_LIST_OPTIONS:
+            return {...state, params: initialState.params};
         default:
             return state;
     }

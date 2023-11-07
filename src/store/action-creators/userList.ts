@@ -24,3 +24,7 @@ export const fetchUsers = (params: UserListParams) => {
 export const setUserListOptions = (params: UserListParams): UserListAction => {
     return {type: UserListActionTypes.SET_USER_LIST_OPTIONS, payload: params}
 }
+
+export const resetUserListOptions = (): UserListAction => {
+    return {type: UserListActionTypes.RESET_USER_LIST_OPTIONS};
+}
