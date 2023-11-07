@@ -1,0 +1,68 @@
+.user-details {
+  .member-since {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 20px;
+
+    .back {
+      margin: auto 0;
+      cursor: pointer;
+    }
+
+    .username {
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+
+  .content {
+    max-width: 600px;
+    margin: auto;
+
+    .image {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      padding: 5px;
+
+      // FIXME: remove this and set background image
+      background-color: #D9D9D9;
+      border: 1px solid #000;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #D9D9D9;
+        border: 1px solid black;
+        height: 100px;
+        width: 100px;
+      }
+
+      .header-image {
+        margin-left: 20px;
+      }
+    }
+
+    .info-item {
+      margin-top: 20px;
+
+      .label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .value {
+        padding-left: 15px;
+      }
+    }
+  }
+}
